@@ -28,7 +28,7 @@ beta=0.5;
 gamma=2;
 delta=0.5;
 epsilon = 1e-4;
-Nmax=1e6;
+Nmax=1e4;
 c1=1;
 c2=1;
 a=[4,4.4934,5];
@@ -46,6 +46,8 @@ w_outer_tab = [];
 
 r_inner_tab = [];
 r_outer_tab = [];
+x0_1_tab = [];
+x0_2_tab = [];
 
 
 %sprawdzenie czy punkt startowy jest w obszarze dozwolonym
@@ -61,6 +63,8 @@ for i=1:length(a)
 
     x0_inner = x0;
     x0_outer = x0;
+    x0_1_tab(end+1) = x0(1);
+    x0_2_tab(end+1) = x0(2);
 
     while true
         [x_opt_inner,y_opt_inner,r_opt_inner,w_inner] = simplex(x0_inner,w_inner,alfa,beta,gamma,delta,epsilon,Nmax,c1,a(i),true)
