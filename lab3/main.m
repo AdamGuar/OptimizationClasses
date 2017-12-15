@@ -17,7 +17,8 @@ for i=1:100
         y(i,j) = fit_fun([x1(i),x2(j)],0,0,0,false);
     end
 end
-%surf(x1,x2,y);
+
+surf(x1,x2,y);
 
 w_inner=0;
 w_outer=0;
@@ -29,8 +30,7 @@ gamma=2;
 delta=0.5;
 epsilon = 1e-4;
 Nmax=1e4;
-c1=1;
-c2=1;
+
 a=[4,4.4934,5];
 
 x1_opt_tab_inner = [];
@@ -53,7 +53,10 @@ x0_2_tab = [];
 %sprawdzenie czy punkt startowy jest w obszarze dozwolonym
 
 for i=1:length(a)
-  for j=1:100
+  for j=1:1
+    
+    c1=1;
+    c2=1;
     
     x0 = 3*rand(2,1)+1;
 
@@ -65,6 +68,9 @@ for i=1:length(a)
     x0_outer = x0;
     x0_1_tab(end+1) = x0(1);
     x0_2_tab(end+1) = x0(2);
+    
+    w_inner = 0;
+    w_outer = 0;
 
     while true
         [x_opt_inner,y_opt_inner,r_opt_inner,w_inner] = simplex(x0_inner,w_inner,alfa,beta,gamma,delta,epsilon,Nmax,c1,a(i),true)
@@ -78,6 +84,8 @@ for i=1:length(a)
         end
         x0_inner=x_opt_inner;
         c1=0.5*c1;
+      %  hold on;
+      %  surf(x0_inner(1),x0_inner(2),y_opt_inner)
     end
     while true
         [x_opt_outer,y_opt_outer,r_opt_outer,w_outer] = simplex(x0_outer,w_outer,alfa,beta,gamma,delta,epsilon,Nmax,c2,a(i),false)
@@ -91,7 +99,15 @@ for i=1:length(a)
         end
         x0_outer=x_opt_outer;
         c2=2*c2;
+        hold on;
+        surf(x0_outer(1),x0_outer(2),y_opt_outer)
     end
 
   end  
 end
+
+plot(r_inner_tab);
+plot(r_outer_tab);
+
+
+

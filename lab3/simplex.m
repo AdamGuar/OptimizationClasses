@@ -5,14 +5,14 @@ S.y=zeros(1,N+1);
 S.x(:,1) = x0;
 D=eye(N);
 for i=2:N+1
-    S.x(:,i) = x0+0.5*D(:,i-1);
+    S.x(:,i) = x0+0.05*D(:,i-1);
 end
 for i=1:N+1
     [S.y(i),w] = fit_fun(S.x(:,i),w,c,a,isInnerPenalty);
 end
 while true
     [ignored,xmax] = max(S.y);
-    [ignored,xmin] = max(S.y);
+    [ignored,xmin] = min(S.y);
     %?
     Xsr.x = mean(S.x(:,[1:xmax-1,xmax+1:end]),2);
     Xodb.x = Xsr.x+alfa*(Xsr.x-S.x(:,xmax));
