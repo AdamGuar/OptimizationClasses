@@ -20,7 +20,7 @@ else
   g2 = -x(2) + 1;
   g3 = sqrt(x(1)^2+x(2)^2) - a;
   if g1 > 0 || g2 > 0 || g3 > 0
-    p = 1000000;
+    p = Inf;
   else  
     p = -1/g1 - 1/g2 - 1/g3;
   end
