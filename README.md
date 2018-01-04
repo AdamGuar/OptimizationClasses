@@ -5,3 +5,5 @@ Lab1: "Optymalizacja funkcji jednej zmiennej metodami bezgradientowymi" / "One v
 Lab2: "Optymalizacja funkcji wielu zmiennych metodami bezgradientowymi" / "Multivariable function optimization using gradientless optimization methods"
 
 Lab3: "Optymalizacja z ograniczeniami funkcji wielu zmiennych metodami bezgradientowymi" / "Multivariable function constrained optimization using gradientless optimization methods"
+
+Lab4: "Optymalizacja funkcji wielu zmiennych metodami gradientowymi" / "Multivariable function optimization using gradient optimization methods"
