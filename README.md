@@ -9,3 +9,4 @@ Lab3: "Optymalizacja z ograniczeniami funkcji wielu zmiennych metodami bezgradie
 Lab4: "Optymalizacja funkcji wielu zmiennych metodami gradientowymi" / "Multivariable function optimization using gradient optimization methods"
 
 Lab5: "Dwukryterialna optymalizacja belki" / "Bicriteria optimization of beam"
+
