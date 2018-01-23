@@ -10,3 +10,4 @@ Lab4: "Optymalizacja funkcji wielu zmiennych metodami gradientowymi" / "Multivar
 
 Lab5: "Dwukryterialna optymalizacja belki" / "Bicriteria optimization of beam"
 
+Lab^: "Optymalizacja zawieszenia samochodowego przy uzyciu metody PSO" / "Car suspension optimization using PSO method"
